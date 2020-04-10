@@ -19,9 +19,9 @@ public class DataRepresent {
 
     }
 
-    // By default it uses 8 bytes to store the integer using twos complement
-    // MSB at the sign of the number  1- means neg 0-positive
-    // Intialize a long with a number greater than max int than you need  to
+    // By default the long data type uses 8 bytes to store the integer using two's complement representation
+    // MSB indicates the sign of the number  1 - means neg 0-positive
+    // If you intialize a long with a number greater than the Integer.MAX_VALUE than you need  to
     // add L at the end of number
     private static void longDataType() {
         long maxLong = Long.MAX_VALUE;
@@ -34,7 +34,7 @@ public class DataRepresent {
         long num = 2345678912L;
     }
     // By default the byte data type store numbers in the range -128 to 127
-    // using two's integer numbers
+    // using two's complement numbers
     public static void byteDataType(){
         byte maxByte = Byte.MAX_VALUE;
         byte minByte = Byte.MIN_VALUE;
@@ -52,9 +52,8 @@ public class DataRepresent {
 
     }
 
-    // This method will play with the int data type
+    // This method will demo using the int data type
     // int is using 4 bytes to store numbers as two's complement numbers
-
     public static void intDataType() {
         int max = Integer.MAX_VALUE;
         int min = Integer.MIN_VALUE;
