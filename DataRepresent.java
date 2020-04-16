@@ -31,7 +31,7 @@ public class DataRepresent {
         maxLong++;
         System.out.println("Max Long ? "+maxLong);
 
-        long num = 2345678912L;
+        long num = 1345678912L;
     }
     // By default the byte data type store numbers in the range -128 to 127
     // using two's complement numbers
