@@ -13,9 +13,11 @@ public class DataRepresent {
         data = 0b00111111;
         System.out.println("Hex "+Integer.toHexString(data));
 
+        
         intDataType();
         byteDataType();
         longDataType();
+        shortDataType();
 
     }
 
@@ -31,7 +33,8 @@ public class DataRepresent {
         maxLong++;
         System.out.println("Max Long ? "+maxLong);
 
-        long num = 1345678912L;
+        long num = 2345678912L;
+        System.out.println(Long.toBinaryString(num));
     }
     // By default the byte data type store numbers in the range -128 to 127
     // using two's complement numbers
@@ -46,7 +49,7 @@ public class DataRepresent {
         maxByte++;
         System.out.println("Max is? "+maxByte);
 
-        System.out.println(Integer.toBinaryString(maxByte));
+        System.out.println(createBinaryString(maxByte));
 
         byte num = (byte) 0b10101010;
 
@@ -75,7 +78,51 @@ public class DataRepresent {
 
         // assign a binary number (0b)
         num = 0b0111000110;
-        System.out.println("Num as Binary: " + Integer.toBinaryString(num));
+        System.out.println("Num as Binary: " + createBinaryString(num));
+    }
+    
+     // This method will demo using the short data type
+    //  short is using 2 bytes to store numbers as two's complement numbers
+    public static void shortDataType() {
+    
+        short max = Short.MAX_VALUE;
+        short min = Short.MIN_VALUE;
+
+        System.out.println("Max short: " + max);
+        System.out.println("Min short: " + min);
+
+        // add 1 to max
+        max++;
+        System.out.println("Max Short overflowed: "+max);
+
+        // assign a hex number (0x) to the short
+        short num = (short) 0xFFAA;
+        System.out.println("Num is " + num);
+
+        // assign an octal number (0) to the short
+        num = 0721;
+        System.out.println("Num is " + num);
+
+        // assign a binary number (0b)
+        num = 0b0110111101110001;
+        System.out.println("Num as Binary: " + createBinaryString(num));
+
+    }
+
+     // this helper method adds leading 0's to the BinaryString so the BinaryString always has 32 bits
+    private static String createBinaryString(int num){
+        final int BITS_IN_INT = 32;  // number of bits in a 4 byte primitive int
+
+        String result = Integer.toBinaryString(num); // this method does not return leading 0's
+
+        // so we must add them, create empty zeros string
+        String zeros = "";
+
+        // pad leading zeros onto binary string, if result string length is < 32
+        for (int i=0; i< BITS_IN_INT - result.length(); i++){
+            zeros += "0";
+        }
+        return zeros + result;
     }
 
 }
